@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.itheima.bos.domain.top10categorysession" table="top10_category_session" catalog="sparkproject">
+ 
+		 <id name="id" type="java.lang.Integer">
+            <column name="id" length="11" />
+         </id>
+         
+        <property name="taskid" type="java.lang.Integer">
+            <column name="task_id" length="11" />
+        </property>
+        <property name="categoryid" type="java.lang.Integer">
+            <column name="category_id" length="11" />
+        </property>
+        <property name="sessionid" type="java.lang.String">
+            <column name="session_id" length="255" />
+        </property>
+       
+        <property name="clickcount" type="java.lang.Integer">
+            <column name="click_count" length="11" />
+        </property>
+        
+        
+        
+        
+       </class>
+</hibernate-mapping>

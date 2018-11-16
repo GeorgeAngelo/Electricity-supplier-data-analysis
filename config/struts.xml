@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.objectFactory" value="spring"/>
+	<!-- 注册国际化文件 -->
+	<constant name="struts.custom.i18n.resources" value="message"></constant>
+	<package name="basicstruts2" extends="struts-default">
+		<interceptors>
+			<!-- 注册拦截器 -->
+			<interceptor name="BOSLoginInterceptor" class="com.itheima.bos.web.interceptor.BOSLoginInterceptor">
+				<param name="excludeMethods">login</param>
+			</interceptor>
+			<!-- 拦截器栈 -->
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="BOSLoginInterceptor"/>
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 指定默认栈 -->
+		<default-interceptor-ref name="myStack"/>
+		<global-results>
+			<result name="login">/login.jsp</result>
+		</global-results>
+		<!-- 需要进行权限控制的页面访问 -->
+		<action name="page_*_*">
+			<result name="success" type="dispatcher">/WEB-INF/pages/{1}/{2}.jsp</result>
+		</action>
+		<action name="userAction_*" class="userAction" method="{1}">
+			<result name="home">/index.jsp</result>
+		</action>
+		<!-- 取派员管理 -->
+		<action name="staffAction_*" class="staffAction" method="{1}">
+			<result name="list">/WEB-INF/pages/base/staff.jsp</result>
+		</action>
+		<!-- 区域管理 -->
+		<action name="regionAction_*" class="regionAction" method="{1}">
+			<result name="list">/WEB-INF/pages/base/region.jsp</result>
+		</action>
+		<!-- 分区管理 -->
+		<action name="subareaAction_*" class="subareaAction" method="{1}">
+			<result name="list">/WEB-INF/pages/base/subarea.jsp</result>
+		</action>
+		<!-- 定区管理 -->
+		<action name="decidedzoneAction_*" class="decidedzoneAction" method="{1}">
+			<result name="list">/WEB-INF/pages/base/decidedzone.jsp</result>
+		</action>
+		<!-- 业务受理Action -->
+		<action name="noticebillAction_*" class="noticebillAction" method="{1}">
+			<result name="addUI">/WEB-INF/pages/qupai/noticebill_add.jsp</result>
+		</action>
+		<!-- 工作单管理Action -->
+		<action name="workordermanageAction_*" class="workordermanageAction" method="{1}">
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.itheima.bos.domain.sessiondetail" table="session_detail" catalog="sparkproject">
+ 
+	 
+		 <id name="id" type="java.lang.Integer">
+            <column name="id" length="11" />
+         </id>
+         
+            <property name="taskid" type="java.lang.Integer">
+             <column name="task_id" length="11" />
+        </property>
+         
+        <property name="userid" type="java.lang.Integer">
+            <column name="user_id" length="11" />
+        </property>
+        <property name="sessionid" type="java.lang.String">
+            <column name="session_id" length="255" />
+        </property>
+        <property name="pageid" type="java.lang.Integer">
+            <column name="page_id" length="11" />
+        </property>
+       
+        <property name="actiontime" type="java.lang.String">
+            <column name="action_time" length="255" />
+        </property>
+        
+          <property name="searchkeyword" type="java.lang.String">
+            <column name="search_keyword" length="255" />
+        </property>
+        
+           <property name="clickcatrgoryid" type="java.lang.Integer">
+            <column name="click_category_id" length="11" />
+        </property>
+        
+           <property name="clickproductid" type="java.lang.Integer">
+            <column name="click_product_id" length="11" />
+        </property>
+        
+           <property name="ordercategoryid" type="java.lang.String">
+            <column name="order_category_ids" length="255" />
+        </property>
+        
+           <property name="orderproductid" type="java.lang.String">
+            <column name="order_product_ids" length="255" />
+        </property>
+        
+           <property name="paycategoryids" type="java.lang.String">
+            <column name="pay_category_ids" length="255" />
+        </property>
+        
+        
+           <property name="payproductids" type="java.lang.String">
+            <column name="pay_product_ids" length="255" />
+        </property>
+        
+       </class>
+</hibernate-mapping>

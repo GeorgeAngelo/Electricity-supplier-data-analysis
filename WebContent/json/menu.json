@@ -1,0 +1,14 @@
+[
+		{ "id":"11", "pId":"0", "name":"session模块"},
+		{ "id":"112", "pId":"11", "name":"top10品类数据",  "page":"page_base_staff.action"},
+		{ "id":"113", "pId":"11", "name":"top10品类的session","page":"page_base_region.action"},
+		{ "id":"114", "pId":"11", "name":"top10session明细数据", "page":"page_base_subarea.action"},
+		{ "id":"115", "pId":"11", "name":"时间比例随机1000session","page":"page_base_decidedzone.action"},
+		{ "id":"12", "pId":"0", "name":"page模块"},
+		{ "id":"121", "pId":"12", "name":"业务受理" ,"page":"page_qupai_noticebill_add.action"},
+		{ "id":"122", "pId":"12", "name":"工作单快速录入" ,"page":"page_qupai_quickworkorder.action"},
+		{ "id":"124", "pId":"12", "name":"工作单导入" ,"page":"page_qupai_workorderimport.action"},
+		{ "id":"13", "pId":"0", "name":"ad模块"},
+		{ "id":"131", "pId":"13", "name":"查台转单","page":""},
+		{ "id":"132", "pId":"13", "name":"人工调度","page":"page_qupai_diaodu.action"}
+]
